@@ -3,9 +3,10 @@ import ItemCount from "./ItemCount"
 
 const ItemListContainer = ({greeting}) => {
 
-    const onAdd = () => {
-        alert("You have added some items.");
-    }
+    // // const onAdd = (rate) => {
+    // //     console.log(rate);
+    // //     alert("You have added some items." + rate);
+    // // }
 
     return (
         <>
@@ -13,7 +14,7 @@ const ItemListContainer = ({greeting}) => {
             <ItemCount 
                 stock = {10} //ahora esta hardcodeado
                 initial = {1}
-                onAdd={onAdd}
+                // // onAdd={onAdd}
             />
         </>
     );
