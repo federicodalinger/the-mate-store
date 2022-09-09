@@ -1,21 +1,17 @@
 import { Wrapper } from "./styledComponents";
-import ItemCount from "./ItemCount"
+// // import ItemCount from "./ItemCount";
+import ItemList from "../containers/ItemList";
 
 const ItemListContainer = ({greeting}) => {
-
-    // // const onAdd = (rate) => {
-    // //     console.log(rate);
-    // //     alert("You have added some items." + rate);
-    // // }
 
     return (
         <>
             <Wrapper>{greeting}</Wrapper>
-            <ItemCount 
-                stock = {10} //ahora esta hardcodeado
+            {/* <ItemCount 
+                stock = {10} 
                 initial = {1}
-                // // onAdd={onAdd}
-            />
+            /> */}
+            <ItemList/>
         </>
     );
 }

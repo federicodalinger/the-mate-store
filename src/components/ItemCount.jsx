@@ -12,14 +12,12 @@ const ItemCount = ({stock, initial}) => {
     const handleClickAdd = () => {
         if(rate<stock && rate>=1) {
            setRate(rate+1)
-        // //    console.log(rate+1)
         }   
     }
 
     const handleClickDelete = () => {
         if(rate<=stock && rate>1) {
             setRate(rate-1)
-            // // console.log(rate-1)
         } 
     }
 
@@ -37,7 +35,7 @@ const ItemCount = ({stock, initial}) => {
             </img>
             <div>
                 <h3>1er Mate Generado en React</h3>
-                    <Stack direction="row" spacing={3}> 
+                    <Stack direction="row" spacing={3} > 
                         <Stack direction="row" spacing={3}> 
                             <Button variant="contained" size="small" onClick={handleClickDelete}>-</Button>
                             <div>{rate}</div>

@@ -5,7 +5,7 @@ function App() {
   return <>
     {/* //Aca ponemos el NavBar dentro de ./src/components/ */}
     <NavBar />
-    <ItemListContainer greeting="Hola mundo y tutor de React!"/>
+    <ItemListContainer greeting="En esta sección se encuentran los mates a la venta:"/>
   
   </>;
 
