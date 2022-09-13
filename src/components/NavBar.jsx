@@ -1,3 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Nav from 'react-bootstrap/esm/Nav';
+import NavDropdown from 'react-bootstrap/esm/NavDropdown';
+
 import { AppBar } from "@material-ui/core"
 import CartWidget from "./CartWidget"
 import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents"
@@ -5,21 +10,50 @@ import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents
 const NavBar = () => {
   return (
     <AppBar position="relative">
-      <Wrapper>
-        <Left>
-          <Logo>The Mate Store 🧉</Logo>
-        </Left>
-        <Center>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Contact</MenuItem>
-          <MenuItem>Types</MenuItem>
-        </Center>
-        <Right>
-          <MenuItem>Contact</MenuItem>
-          <MenuItem>About us</MenuItem>
-          <MenuItem><CartWidget/></MenuItem>
-        </Right>
-      </Wrapper>
+        <Wrapper>
+            <Left>
+                <Nav.Link href="/">
+                    <Logo>The Mate Store 🧉</Logo>
+                </Nav.Link>
+            </Left>
+
+            <Center>
+                <MenuItem>
+                    <Nav.Link href="#history">History</Nav.Link>
+                </MenuItem>
+
+                <MenuItem>
+                    <NavDropdown title="Yerba types" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#argentinian_brands_yerba">Argentinian Brands</NavDropdown.Item>
+                        <NavDropdown.Item href="#from_around_the_world_yerba">From Around the World</NavDropdown.Item>
+                        <NavDropdown.Item href="#home_made_yerba">Homemade</NavDropdown.Item>
+                    </NavDropdown>
+                </MenuItem>
+
+                <MenuItem>
+                    <NavDropdown title="Mate types" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#wood_mates">Wood mates</NavDropdown.Item>
+                        <NavDropdown.Item href="#pumpkin_mates">Pumpkin mates</NavDropdown.Item>
+                        <NavDropdown.Item href="#stainless_steel_mates">Stainless Steel mates</NavDropdown.Item>
+                        <NavDropdown.Item href="#3d_printed_mates">3D printed mates</NavDropdown.Item>
+                    </NavDropdown>
+                </MenuItem>
+            </Center>
+            
+            <Right>
+                <MenuItem>
+                    <Nav.Link href="#contact">Contact</Nav.Link>
+                </MenuItem>
+                <MenuItem>
+                    <Nav.Link href="#about_us">About us</Nav.Link>
+                </MenuItem>
+                <MenuItem>
+                    <Nav.Link href="#shipping_cart">
+                        <CartWidget/>
+                    </Nav.Link>
+                </MenuItem>
+            </Right>
+        </Wrapper>
     </AppBar>
   );
 }

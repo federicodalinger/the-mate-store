@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+// // import { useEffect } from 'react';
 
 import { Button } from "@material-ui/core"
 import Stack from '@mui/material/Stack';
 
 
-
-const Item = ({thumbnail, description, start, stock, initial}) => {
+const Item = ({thumbnail, description, stock, initial}) => {
   
     const [rate, setRate] = useState(initial);  
-
-    const [isValid, setIsValid] = useState(false);
+    // // const [isValid, setIsValid] = useState(false);
 
     const handleClickAdd = () => {
         if(rate<stock && rate>=1) {
@@ -29,16 +28,15 @@ const Item = ({thumbnail, description, start, stock, initial}) => {
         }   
     }
 
-
-    //componentDidUpdate
-    useEffect(() => {
-        console.log("Se actualizaron los items")
-    }, [rate, isValid]);
+    // //componentDidUpdate
+    // // useEffect(() => {
+    // //     console.log("Se actualizaron los items")
+    // // }, [rate, isValid]);
 
     return (
         <Stack direction="row" spacing={5}>
             <div>
-                <img src={thumbnail} alt="" class="imagen_item"/>
+                <img src={thumbnail} alt="" className='imagen_item'/>              
             </div>
             <Stack direction="column" spacing={1}>
             <div>
