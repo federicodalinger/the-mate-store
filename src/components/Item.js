@@ -1,60 +1,52 @@
-import { useState } from 'react';
-// // import { useEffect } from 'react';
+// // import { useState } from 'react';
 
 import { Button } from "@material-ui/core"
 import Stack from '@mui/material/Stack';
 
+import { Link } from 'react-router-dom';
 
-const Item = ({thumbnail, description, stock, initial}) => {
+
+const Item = ({id, thumbnail, title, price}) => {
   
-    const [rate, setRate] = useState(initial);  
-    // // const [isValid, setIsValid] = useState(false);
+    // // const [rate, setRate] = useState(initial);  
 
-    const handleClickAdd = () => {
-        if(rate<stock && rate>=1) {
-           setRate(rate+1)
-        }   
-    }
+    // // const handleClickAdd = () => {
+    // //     if(rate<stock && rate>=1) {
+    // //        setRate(rate+1)
+    // //     }   
+    // // }
 
-    const handleClickDelete = () => {
-        if(rate<=stock && rate>1) {
-            setRate(rate-1)
-        } 
-    }
+    // // const handleClickDelete = () => {
+    // //     if(rate<=stock && rate>1) {
+    // //         setRate(rate-1)
+    // //     } 
+    // // }
 
-    const handleClickSendChart = () => {
-        if(rate<=stock && rate>=1) {
-           alert("You have added " + rate + " items.")
-        }   
-    }
-
-    // //componentDidUpdate
-    // // useEffect(() => {
-    // //     console.log("Se actualizaron los items")
-    // // }, [rate, isValid]);
+    // // const handleClickSendChart = () => {
+    // //     if(rate<=stock && rate>=1) {
+    // //        alert("You have added " + rate + " items.")
+    // //     }   
+    // // }
 
     return (
-        <Stack direction="row" spacing={5}>
-            <div>
-                <img src={thumbnail} alt="" className='imagen_item'/>              
+        <div className="">
+            <div className="">
+                <Stack direction="row" spacing={5}>
+                    <div >
+                        <img src={thumbnail} alt="" className='imagen_item'/>              
+                    </div>
+                    <Stack direction="column" spacing={1}>
+                        <div>
+                            <h4>{title}</h4>
+                            <h4>${price}</h4>
+                        </div>
+                        <div>
+                            <Link to={`/item/${id}`} style={{ textDecoration: 'none' }}><Button variant="contained" size="small">More info</Button></Link>
+                        </div>
+                    </Stack>
+                </Stack>
             </div>
-            <Stack direction="column" spacing={1}>
-            <div>
-                <h4>Description: {description}</h4>
-            </div>
-            <div>
-                     <Stack direction="column" spacing={2}> 
-                         <Stack direction="row" spacing={2}> 
-                             <Button variant="contained" size="small" onClick={handleClickDelete}>-</Button>
-                             <div>{rate}</div>
-                             <Button variant="contained" size="small" onClick={handleClickAdd}>+</Button> 
-                         </Stack>
-
-                         <Button variant="contained" size="small" onClick={handleClickSendChart}>Add to chart</Button>
-                     </Stack>
-             </div>
-             </Stack>
-        </Stack>
+        </div>
     );
 }
 

@@ -1,14 +1,34 @@
-import { WrapperBackground } from "./styledComponents";
+// // import ItemCount from './ItemCount';
+import ItemList from './ItemList';
+// // import { Wrapper } from './styledComponents';
+import customFetch from "../utils/customFetch";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import dataFromBD from '../utils/data';
 
-import ItemList from "../containers/ItemList";
+const ItemListContainer = () => {
+    const [datos, setDatos] = useState([]);
+    const { idCategory } = useParams();
 
+    console.log(idCategory);
 
-const ItemListContainer = ({greeting}) => {
+    //componentDidUpdate
+    useEffect(() => {
+        customFetch(2000, dataFromBD.filter(item => {
+            if (idCategory === undefined) return item;
+            return item.categoryId === parseInt(idCategory)
+        }))
+            .then(result => setDatos(result))
+            .catch(err => console.log(err))
+    }, [idCategory]);
+
+    // // const onAdd = (qty) => {
+    // //     alert("You have selected " + qty + " items.");
+    // // }
 
     return (
-        <>
-            <WrapperBackground>{greeting}</WrapperBackground>
-            <ItemList/>
+        <>  
+            <ItemList items={datos} />
         </>
     );
 }

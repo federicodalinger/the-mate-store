@@ -8,7 +8,7 @@ const ItemDetail = ({ item }) => {
     return (
         <>
         {
-            item.image?
+            item && item.image?
                 <DetailContainer>
                     <WrapperDetail>
                         <ImgContainer>
@@ -28,7 +28,7 @@ const ItemDetail = ({ item }) => {
                     </WrapperDetail>
                 </DetailContainer>
                 :
-                <p>Loading...</p>
+                <p>Cargando mate...</p>
         }
         </>
     );

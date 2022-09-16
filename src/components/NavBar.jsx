@@ -7,12 +7,14 @@ import { AppBar } from "@material-ui/core"
 import CartWidget from "./CartWidget"
 import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents"
 
+import { Link } from 'react-router-dom';
+
 const NavBar = () => {
   return (
     <AppBar position="relative">
         <Wrapper>
             <Left>
-                <Nav.Link href="/">
+                <Nav.Link as={Link} to={'/'}>
                     <Logo>The Mate Store 🧉</Logo>
                 </Nav.Link>
             </Left>
@@ -31,11 +33,11 @@ const NavBar = () => {
                 </MenuItem>
 
                 <MenuItem>
-                    <NavDropdown title="Mate types" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#wood_mates">Wood mates</NavDropdown.Item>
-                        <NavDropdown.Item href="#pumpkin_mates">Pumpkin mates</NavDropdown.Item>
-                        <NavDropdown.Item href="#stainless_steel_mates">Stainless Steel mates</NavDropdown.Item>
-                        <NavDropdown.Item href="#3d_printed_mates">3D printed mates</NavDropdown.Item>
+                <NavDropdown title="Mate types" id="basic-nav-dropdown">
+                        <NavDropdown.Item as={Link} to={'/category/1'}>Wood mates</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to={'/category/2'}>Pumpkin mates</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to={'/category/3'}>Stainless Steel mates</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to={'/category/4'}>3D printed mates</NavDropdown.Item>
                     </NavDropdown>
                 </MenuItem>
             </Center>
