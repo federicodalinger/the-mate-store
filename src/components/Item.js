@@ -1,5 +1,3 @@
-// // import { useState } from 'react';
-
 import { Button } from "@material-ui/core"
 import Stack from '@mui/material/Stack';
 
@@ -8,26 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Item = ({id, thumbnail, title, price}) => {
   
-    // // const [rate, setRate] = useState(initial);  
-
-    // // const handleClickAdd = () => {
-    // //     if(rate<stock && rate>=1) {
-    // //        setRate(rate+1)
-    // //     }   
-    // // }
-
-    // // const handleClickDelete = () => {
-    // //     if(rate<=stock && rate>1) {
-    // //         setRate(rate-1)
-    // //     } 
-    // // }
-
-    // // const handleClickSendChart = () => {
-    // //     if(rate<=stock && rate>=1) {
-    // //        alert("You have added " + rate + " items.")
-    // //     }   
-    // // }
-
     return (
         <div className="">
             <div className="">

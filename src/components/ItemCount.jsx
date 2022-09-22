@@ -5,19 +5,18 @@ import Stack from '@mui/material/Stack';
 import { ItemCountContainer } from './styledComponents';
 
 
-
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
   
     const [rate, setRate] = useState(initial);  
 
     const handleClickAdd = () => {
-        if(rate<stock && rate>=1) {
+        if(rate<stock && rate>=initial) {
            setRate(rate+1)
         }   
     }
 
     const handleClickDelete = () => {
-        if(rate<=stock && rate>1) {
+        if(rate<=stock && rate>initial) {
             setRate(rate-1)
         } 
     }
@@ -25,6 +24,7 @@ const ItemCount = ({stock, initial}) => {
     const handleClickSendChart = () => {
         if(rate<=stock && rate>=1) {
            alert("You have added " + rate + " items.")
+           onAdd(rate)
         }   
     }
 
@@ -40,7 +40,13 @@ const ItemCount = ({stock, initial}) => {
                             <Button variant="contained" size="small" onClick={handleClickAdd}>+</Button> 
                         </Stack>
 
-                        <Button variant="contained" size="small" onClick={handleClickSendChart}>Add to chart</Button>
+                        {
+                            stock && rate
+                            ? <Button variant="contained" size="small" onClick={handleClickSendChart}>Add to chart</Button>
+                            : <Button variant="contained" disabled size="small">Add to chart</Button>
+                        }
+                        
+
                     </Stack>
             </ItemCountContainer>
         </div>

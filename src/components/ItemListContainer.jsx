@@ -1,6 +1,4 @@
-// // import ItemCount from './ItemCount';
 import ItemList from './ItemList';
-// // import { Wrapper } from './styledComponents';
 import customFetch from "../utils/customFetch";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
@@ -21,10 +19,6 @@ const ItemListContainer = () => {
             .then(result => setDatos(result))
             .catch(err => console.log(err))
     }, [idCategory]);
-
-    // // const onAdd = (qty) => {
-    // //     alert("You have selected " + qty + " items.");
-    // // }
 
     return (
         <>  

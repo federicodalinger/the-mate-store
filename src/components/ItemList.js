@@ -1,9 +1,4 @@
-// // import { useState, useEffect } from 'react'
 import Item from './Item';
-// // import customFetch from '../utils/customFetch';
-// // import dataFromBD from '../utils/data';
-
-// // import { useParams } from 'react-router-dom';
 
 const ItemList = ({ items }) => {
 
