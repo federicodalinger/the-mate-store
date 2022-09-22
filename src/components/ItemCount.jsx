@@ -42,8 +42,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
                         {
                             stock && rate
-                            ? <Button variant="contained" size="small" onClick={handleClickSendChart}>Add to chart</Button>
-                            : <Button variant="contained" disabled size="small">Add to chart</Button>
+                            ? <Button variant="contained" size="small" onClick={handleClickSendChart}>Add to cart</Button>
+                            : <Button variant="contained" disabled size="small">Add to cart</Button>
                         }
                         
 
