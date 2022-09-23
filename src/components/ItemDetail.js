@@ -5,13 +5,17 @@ import { Link } from "react-router-dom";
 import {Button} from "@mui/material";
 import { useState } from 'react';
 
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 const ItemDetail = ({ item }) => {
 
     const [itemCount, setItemCount] = useState(0);
+    const ctx = useContext(CartContext);
 
     const onAdd = (qty) => {
         setItemCount(qty);
+        ctx.addItem(item, qty);
     }
 
     return (

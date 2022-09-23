@@ -21,14 +21,14 @@ const NavBar = () => {
 
             <Center>
                 <MenuItem>
-                    <Nav.Link href="#history">History</Nav.Link>
+                    <Nav.Link>History</Nav.Link>
                 </MenuItem>
 
                 <MenuItem>
                     <NavDropdown title="Yerba types" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#argentinian_brands_yerba">Argentinian Brands</NavDropdown.Item>
-                        <NavDropdown.Item href="#from_around_the_world_yerba">From Around the World</NavDropdown.Item>
-                        <NavDropdown.Item href="#home_made_yerba">Homemade</NavDropdown.Item>
+                        <NavDropdown.Item >Argentinian Brands</NavDropdown.Item>
+                        <NavDropdown.Item >From Around the World</NavDropdown.Item>
+                        <NavDropdown.Item >Homemade</NavDropdown.Item>
                     </NavDropdown>
                 </MenuItem>
 
@@ -44,13 +44,13 @@ const NavBar = () => {
             
             <Right>
                 <MenuItem>
-                    <Nav.Link href="#contact">Contact</Nav.Link>
+                    <Nav.Link >Contact</Nav.Link>
                 </MenuItem>
                 <MenuItem>
-                    <Nav.Link href="#about_us">About us</Nav.Link>
+                    <Nav.Link >About us</Nav.Link>
                 </MenuItem>
                 <MenuItem>
-                    <Nav.Link href="#shipping_cart">
+                    <Nav.Link >
                         <CartWidget/>
                     </Nav.Link>
                 </MenuItem>

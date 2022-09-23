@@ -92,6 +92,17 @@ const ImageDetail = styled.img`
     border: 0.01rem solid black;
 `;
 
+const ImageDetailCart = styled.img`
+    flex=1;
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 12.5rem;
+    height: 12.5rem;
+    border: 0.01rem solid black;
+`;
+
 const InfoContainer = styled.div`
     flex=1;
     padding: 1rem 1rem;
@@ -159,4 +170,4 @@ const ItemCountContainer = styled.div`
     font-size: 1rem;
 `;
 
-export {Wrapper, WrapperBackground, Logo, MenuItem, Left, Center, Right, DetailContainer, WrapperDetail, ImgContainer, ImageDetail, InfoContainer, Title, Description, Price, ItemCountContainer, DescriptionStock}
+export {Wrapper, WrapperBackground, Logo, MenuItem, Left, Center, Right, DetailContainer, WrapperDetail, ImgContainer, ImageDetail, ImageDetailCart, InfoContainer, Title, Description, Price, ItemCountContainer, DescriptionStock}
